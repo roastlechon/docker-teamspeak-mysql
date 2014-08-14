@@ -26,6 +26,8 @@ The last command will bind the container's ports 9987, 10011, and 30033 to the h
 * `/sbin/my_init` - Runs the init scripts used to kick off long-running processes and other bootstrapping, as per [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker).
 * `--enable-insecure-key` - Enables an insecure key to be able to SSH into the container, as per [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker).
 
+## Usage with a MySQL container
+
 You can use this image in conjunction with a MySQL container and [link them together](http://docs.docker.io/en/latest/use/working_with_links_names/). Note that you must have the MySQL container running first. 
 
 For example:
@@ -34,7 +36,7 @@ For example:
 
 * `--link ts3-mysql:ts3-mysql` - Links the container and specifies the container to link to and the alias. The container to link to and the alias are separate by a colon.
 
-### List of environmental variables
+## List of environmental variables
 * `TS3_MYSQL_HOST` - Hostname of MySQL database. This assumes that its not running in the same container as Teamspeak, but a remote database (could be different container or on the host itself).
 * `TS3_MYSQL_PORT` - Port of MySQL database.
 * `TS3_MYSQL_DB` - Name of the database. Default is "ts3".
