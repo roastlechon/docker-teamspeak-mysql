@@ -32,12 +32,6 @@ RUN dpkg -i /tmp/libmysqlclient15off_5.0.51a-24+lenny5_amd64.deb
 ADD build/libts3db_mysql.so /opt/teamspeak/libts3db_mysql.so
 ADD build/ts3db_mysql.ini /opt/teamspeak/ts3db_mysql.ini
 
-RUN sed -i -e "s/host=127.0.0.1/host=$TS3_MYSQL_HOST/g" /opt/teamspeak/ts3db_mysql.ini
-RUN sed -i -e "s/port=3306/port=$TS3_MYSQL_PORT/g" /opt/teamspeak/ts3db_mysql.ini
-RUN sed -i -e "s/username=ts3/username=$TS3_MYSQL_USER/g" /opt/teamspeak/ts3db_mysql.ini
-RUN sed -i -e "s/password=password/password=$TS3_MYSQL_PASS/g" /opt/teamspeak/ts3db_mysql.ini
-RUN sed -i -e "s/database=ts3/database=$TS3_MYSQL_DB/g" /opt/teamspeak/ts3db_mysql.ini
-
 ADD build/ts3server.ini /opt/teamspeak/ts3server.ini
 
 # Installing Teamspeak3 runit entry
