@@ -39,6 +39,9 @@ RUN mkdir /etc/service/teamspeak
 ADD runit/teamspeak.sh /etc/service/teamspeak/run
 RUN chmod +x /etc/service/teamspeak/run
 
+ADD my_init.d/99_teamspeak_setup.sh /etc/my_init.d/99_teamspeak_setup.sh
+RUN chmod +x /etc/my_init.d/99_teamspeak_setup.sh
+
 # Exposing Teamspeak3 ports
 EXPOSE 9987/udp
 EXPOSE 10011
